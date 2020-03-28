@@ -78,4 +78,22 @@ public class ButtonHandler : MonoBehaviour
                 buttonModificationTracker.First(btn => btn.Key == button.Key).Key.gameObject.SetActive(true);
         }
     }
+
+    public void ToggleButtonVisibility(bool toggleValue)
+    {
+        if(toggleValue)
+        //toggle them on
+        {
+            foreach (var button in allButtons)
+            {
+                button.gameObject.SetActive(true);            }
+        }
+        else
+        {
+            foreach (var button in allButtons)
+            {
+                button.gameObject.SetActive(false);
+            }
+        }
+    }
 }
