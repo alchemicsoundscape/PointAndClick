@@ -68,29 +68,29 @@
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.19f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.19f1/Editor/Data/Managed/UnityEditor.dll"
 /reference:Library/ScriptAssemblies/Unity.Timeline.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll
 /reference:Library/ScriptAssemblies/Unity.VSCode.Editor.dll
 /reference:Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
-/reference:Library/ScriptAssemblies/UnityEngine.UI.dll
-/reference:Library/ScriptAssemblies/Unity.Timeline.dll
-/reference:Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll
-/reference:Library/ScriptAssemblies/Unity.Rider.Editor.dll
-/reference:Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll
-/reference:Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll
-/reference:Library/ScriptAssemblies/Unity.TextMeshPro.dll
-/reference:Library/ScriptAssemblies/UnityEditor.UI.dll
 /reference:Library/ScriptAssemblies/Unity.2D.IK.Editor.dll
 /reference:Library/ScriptAssemblies/Unity.2D.IK.Runtime.dll
-/reference:Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll
-/reference:Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll
-/reference:Library/ScriptAssemblies/Unity.2D.Common.Editor.dll
-/reference:Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll
-/reference:Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll
+/reference:Library/ScriptAssemblies/UnityEngine.UI.dll
+/reference:Library/ScriptAssemblies/Unity.Timeline.dll
 /reference:Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll
+/reference:Library/ScriptAssemblies/PsdPlugin.dll
+/reference:Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.Rider.Editor.dll
 /reference:Library/ScriptAssemblies/Unity.Mathematics.dll
+/reference:Library/ScriptAssemblies/Unity.2D.Psdimporter.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll
+/reference:Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll
+/reference:Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll
 /reference:Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll
 /reference:Library/ScriptAssemblies/Unity.Mathematics.Editor.dll
-/reference:Library/ScriptAssemblies/PsdPlugin.dll
-/reference:Library/ScriptAssemblies/Unity.2D.Psdimporter.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.TextMeshPro.dll
+/reference:Library/ScriptAssemblies/Unity.2D.Common.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll
+/reference:Library/ScriptAssemblies/UnityEditor.UI.dll
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.19f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.19f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/Microsoft.Win32.Primitives.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.19f1/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.AppContext.dll"
@@ -302,9 +302,10 @@
 /define:CSHARP_7_3_OR_NEWER
 Assets\Scripts\Area\Area.cs
 Assets\Scripts\Area\AreaManager.cs
-Assets\Scripts\Area\NewBehaviourScript1.cs
+Assets\Scripts\Area\PlaceOfInterest.cs
 Assets\Scripts\Components\ButtonHandler.cs
 Assets\Scripts\Components\ResourceLoader.cs
+Assets\Scripts\UI\FadeScreen.cs
 "Assets\TextMesh Pro\Examples & Extras\Scripts\Benchmark01.cs"
 "Assets\TextMesh Pro\Examples & Extras\Scripts\Benchmark01_UGUI.cs"
 "Assets\TextMesh Pro\Examples & Extras\Scripts\Benchmark02.cs"
