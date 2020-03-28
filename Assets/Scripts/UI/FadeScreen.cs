@@ -31,9 +31,4 @@ public class FadeScreen : MonoBehaviour
             }
         }
     }
-
-    public void SetAlpha(float alphaValue)
-    {
-        fadeScreen.color = new Color(fadeScreen.color.r, fadeScreen.color.g, fadeScreen.color.b, alphaValue);
-    }
 }
