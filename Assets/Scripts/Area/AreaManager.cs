@@ -8,19 +8,17 @@ public class AreaManager : MonoBehaviour
 {
     public Area activeArea;
     List<Area> allAreas;
-    ButtonHandler buttonHandler;
-    FadeScreen screenFader;
+    UIManager uiManager;
 
     void Start()
     {
         allAreas = new List<Area>();
-        buttonHandler = GameObject.Find("ButtonHandler").GetComponent<ButtonHandler>();
-        screenFader = GameObject.Find("FadeScreen").GetComponent<FadeScreen>();
+        uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
 
         activeArea.ChangeSprite(activeArea.Name);
         AddArea(activeArea);
 
-        buttonHandler.HandleButtons(this);
+        uiManager.LoadButtons();
     }
 
     public void Traverse(Area area)
@@ -31,10 +29,7 @@ public class AreaManager : MonoBehaviour
         }
         activeArea = area;
 
-        StartCoroutine(screenFader.FadeImage(true));
-        buttonHandler.HandleButtons(this);
-        
-        StartCoroutine(screenFader.FadeImage(false));
+        uiManager.ChangeButtonsAndTransition();
 
         activeArea.ChangeSprite(activeArea.Name);
     }
