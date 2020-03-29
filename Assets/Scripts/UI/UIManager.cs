@@ -29,5 +29,6 @@ public class UIManager : MonoBehaviour
     public void ToggleInventory(bool isActive)
     {
         inventory.gameObject.SetActive(isActive);
+        buttonHandler.ToggleButtonVisibility(isActive);
     }
 }
