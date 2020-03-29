@@ -16,10 +16,12 @@ public class ButtonHandler : MonoBehaviour
     public Button POIButton2;
     public Button POIButton3;
     List<Button> allButtons;
+    AreaManager manager;
     Dictionary<Button, bool> buttonModificationTracker;
 
     void Start()
     {
+        manager = GameObject.Find("AreaManager").GetComponent<AreaManager>();
         allButtons = new List<Button>() { leftButton, rightButton, backButton, forwardButton, POIButton1, POIButton2, POIButton3 };
         buttonModificationTracker = new Dictionary<Button, bool>();
 
@@ -29,23 +31,23 @@ public class ButtonHandler : MonoBehaviour
         }
     }
 
-    public void HandleButtons(AreaManager manager)
+    public void HandleButtons()
     {
-        AssignListeners(manager);
-        ActivatePOIs(manager);
+        AssignListeners();
+        ActivatePOIs();
         TriggerButtonVisibility();
     }
 
-    private void ActivatePOIs(AreaManager manager)
+    private void ActivatePOIs()
     {
         for(int i=0;i<manager.activeArea.placesOfInterest.Count; i++)
         {
             manager.activeArea.placesOfInterest[i].MapPOI();
-            ChangeButtonListeners(manager, manager.activeArea.placesOfInterest[i], manager.activeArea.placesOfInterest[i].interactWith);
+            ChangeButtonListeners(manager.activeArea.placesOfInterest[i], manager.activeArea.placesOfInterest[i].interactWith);
         }
     }
 
-    void AssignListeners(AreaManager manager)
+    void AssignListeners()
     {
         foreach(var button in allButtons)
         {
@@ -53,13 +55,13 @@ public class ButtonHandler : MonoBehaviour
             buttonModificationTracker[button] = false;
         }
 
-        ChangeButtonListeners(manager, manager.activeArea.leftArea, leftButton);
-        ChangeButtonListeners(manager, manager.activeArea.rightArea, rightButton);
-        ChangeButtonListeners(manager, manager.activeArea.previousArea, backButton);
-        ChangeButtonListeners(manager, manager.activeArea.forwardArea, forwardButton);
+        ChangeButtonListeners(manager.activeArea.leftArea, leftButton);
+        ChangeButtonListeners(manager.activeArea.rightArea, rightButton);
+        ChangeButtonListeners(manager.activeArea.previousArea, backButton);
+        ChangeButtonListeners(manager.activeArea.forwardArea, forwardButton);
     }
 
-    void ChangeButtonListeners(AreaManager manager, Area areaToPointTo, Button button)
+    void ChangeButtonListeners(Area areaToPointTo, Button button)
     {
         if(areaToPointTo != null)
         {
@@ -86,7 +88,8 @@ public class ButtonHandler : MonoBehaviour
         {
             foreach (var button in allButtons)
             {
-                button.gameObject.SetActive(true);            }
+                button.gameObject.SetActive(true);
+            }
         }
         else
         {
